@@ -1,0 +1,49 @@
+@import "temp.scss";
+
+.foot-info {
+    width: 100%;
+    display: flex;
+    background-color: $black;
+    color: $white;
+    align-items: center;
+    justify-content: center;
+
+    .foot-info__download {
+        display: flex;
+        flex-direction: column;
+
+        img {
+            width: 200px;
+        }
+    }
+    p {
+        width: 25%;
+        text-align: center;
+        font-size: 17px;
+    }
+}
+
+@media screen and (max-width:900px) {
+
+    .foot-info {
+        flex-direction: column;
+
+        p {
+            margin-top: 15px;
+            width: 50%;
+        }
+    }
+    
+}
+
+@media screen and (max-width:400px) {
+
+    .foot-info {
+
+        p {
+            width: 90%;
+        }
+    }
+    
+}
+

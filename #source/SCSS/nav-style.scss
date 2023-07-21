@@ -1,0 +1,179 @@
+@import "temp.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.head-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $pink;
+    padding: 15px 0 15px 0;
+    position: relative;
+    box-shadow: 2px 2px 5px $black;
+
+    .head-nav__logo {
+        margin: 0 0 0 80px;
+
+        a {
+            text-decoration: none;
+            color: $white;
+            font-weight: normal;
+            letter-spacing: 3px;
+            font-size: 30px;
+            transition: 0.9s;
+            cursor: pointer;
+            display: inline-block;
+
+            &:hover {
+                text-shadow: 0 0 5px $white;
+                transform: translateX(8px);
+            }
+        }
+
+        &::before {
+            content: "";
+            background-image: url(../img/insta.png);
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            top: 5px;
+            left: 15px;
+
+            &:hover {
+                box-shadow: 0 0 5px $white;
+            }
+        }
+    }
+
+    .head-nav__menu {
+
+        .head-nav__hrefs {
+            margin: 0 80px 0 0;
+    
+            a {
+                text-decoration: none;
+                color: $white;
+                margin: 0 25px 0 0;
+                outline: none;
+                font-size: 17px;
+                transition: 0.5s;
+    
+                &:last-child {
+                    margin: 0;
+                }
+    
+                &:hover {
+                    text-shadow: 0 0 5px $white;
+                }
+            }
+        }
+    }
+}
+
+.head-nav__btn {
+    display: none;
+}
+
+@media screen and (max-width:1180px) {
+
+    .head-nav {
+        flex-direction: row-reverse;
+        align-items: stretch;
+        padding: 0;
+
+        .head-nav__logo {
+            padding: 15px 0 15px 0;
+            margin-right: 25px;
+            z-index: 3;
+            position: relative;
+
+            &::before {
+                padding: 15px 0 15px 0;
+                left: -60px;
+                top: -9px;
+            }
+        }
+
+        .head-nav__menu {
+
+            &:hover {
+                .head-nav__hrefs {
+                    display: block;
+                    position: absolute;
+                    width: 100%;
+                    left: 0;
+                    top: 100%;
+                    background-color: $pink;
+                    z-index: 2;
+    
+                    a {
+                        display: block;
+                        padding: 10px;
+                        width: 100%;
+
+                        &:hover {
+                            background-color: $white;
+                            color: $black;
+                            text-shadow: 0 0 1px $black;
+
+                        }
+                    }
+                }
+            }
+    
+            .head-nav__hrefs {
+                display: none;
+            }
+        }
+    }
+
+    .head-nav__btn {
+        display: block;
+        font-size: 25px;
+        color: $white;
+        background-color: $pink;
+        margin-left: 10px;
+        padding: 2px 5px 2px 5px;
+        border-radius: 8px;
+        transition: 0.5s;
+        transform: translateY(15px);
+    
+        &:hover {
+            color: $black;
+            background-color: $white;
+            box-shadow: 0 0 5px $white;
+        }
+    }
+}
+
+
+@media screen and (max-width:400px) {
+
+    .head-nav {
+
+        .head-nav__logo {
+            
+            a {
+                font-size: 25px;
+            }
+
+            &::before {
+                width: 50px;
+                height: 50px;
+                left: -50px;
+            }
+        }
+    }
+}
